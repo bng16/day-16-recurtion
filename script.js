@@ -33,13 +33,30 @@
 
 
 
-let arr=[1,2,3,4,5,6,7,8,9,10];
-function summ(index,sum,arr){
+// let arr=[1,2,3,4,5,6,7,8,9,10];
+// function summ(index,sum,arr){
+//     if(index>arr.length-1){
+//         return sum;
+//     }
+//     sum+=arr[index];
+//     return summ(index+1,sum,arr);
+// }
+
+// console.log(summ(0,0,arr));
+
+
+
+let arr=[1,2,3,4,55,6,7,8,9,10];
+function maxx(index,max,arr){
     if(index>arr.length-1){
-        return sum;
+        return max;
     }
-    sum+=arr[index];
-    return summ(index+1,sum,arr);
+    
+    if(arr[index]>max){
+        max=arr[index];
+    }
+    return maxx(index+1,max,arr);
+    
 }
 
-console.log(summ(0,0,arr));
+console.log(maxx(0,0,arr));
