@@ -46,17 +46,36 @@
 
 
 
-let arr=[1,2,3,4,55,6,7,8,9,10];
-function maxx(index,max,arr){
-    if(index>arr.length-1){
-        return max;
-    }
+// let arr=[1,2,3,4,55,6,7,8,9,10];
+// function maxx(index,max,arr){
+//     if(index>arr.length-1){
+//         return max;
+//     }
     
-    if(arr[index]>max){
-        max=arr[index];
-    }
-    return maxx(index+1,max,arr);
+//     if(arr[index]>max){
+//         max=arr[index];
+//     }
+//     return maxx(index+1,max,arr);
     
+// }
+
+// console.log(maxx(0,0,arr));
+
+
+
+
+
+let str='Biswajit';
+
+function swap(index,arr){
+    if (index>=arr.length-index-1){
+        return arr.join('');
+    }
+
+    let temp=arr[index];
+    arr[index]=arr[arr.length-index-1];
+    arr[arr.length-index-1]=temp;
+    return swap(index+1,arr);
 }
 
-console.log(maxx(0,0,arr));
+console.log(swap(0,str.split("")));
