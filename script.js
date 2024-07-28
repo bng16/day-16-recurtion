@@ -65,17 +65,34 @@
 
 
 
-let str='Biswajit';
+// let str='Biswajit';
 
-function swap(index,arr){
+// function swap(index,arr){
+//     if (index>=arr.length-index-1){
+//         return arr.join('');
+//     }
+
+//     let temp=arr[index];
+//     arr[index]=arr[arr.length-index-1];
+//     arr[arr.length-index-1]=temp;
+//     return swap(index+1,arr);
+// }
+
+// console.log(swap(0,str.split("")));
+
+
+
+let str='aba';
+
+function palindrome(index,arr){
     if (index>=arr.length-index-1){
-        return arr.join('');
+        return 'Yes the string is palindrome';
+    }
+    if (arr[index]!=arr[arr.length-index-1]){
+        return 'No the string is not palindrome';
     }
 
-    let temp=arr[index];
-    arr[index]=arr[arr.length-index-1];
-    arr[arr.length-index-1]=temp;
-    return swap(index+1,arr);
+    return palindrome(index+1,arr);
 }
 
-console.log(swap(0,str.split("")));
+console.log(palindrome(0,str.split("")));
