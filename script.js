@@ -101,23 +101,38 @@
 
 
 
-let arr = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,,16];
-let target=0;
+// let arr = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,,16];
+// let target=0;
 
-function binarySearch(arr,lowIn,upIn,target){
+// function binarySearch(arr,lowIn,upIn,target){
 
-    if(upIn<lowIn){
-        return 'not found';
-    }
-    let mid=Math.floor((lowIn+upIn)/2); 
-    if(arr[mid]===target){
-        return mid;
-    }
-    if(arr[mid]>target){
+//     if(upIn<lowIn){
+//         return 'not found';
+//     }
+//     let mid=Math.floor((lowIn+upIn)/2); 
+//     if(arr[mid]===target){
+//         return mid;
+//     }
+//     if(arr[mid]>target){
         
-        return binarySearch(arr,lowIn,mid-1,target);
+//         return binarySearch(arr,lowIn,mid-1,target);
+//     }
+//     return binarySearch(arr,mid+1,upIn,target);
+// }
+
+// console.log(binarySearch(arr,0,arr.length-1,target));
+
+let arr = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50];
+
+function count(arr, index, cnt, target) {
+    if (index >= arr.length) {
+        return cnt;
     }
-    return binarySearch(arr,mid+1,upIn,target);
+    if (arr[index] === target) {
+        cnt++;
+    }
+    return count(arr, index + 1, cnt, target);
 }
 
-console.log(binarySearch(arr,0,arr.length-1,target));
+
+console.log(count(arr,0,0,5));
