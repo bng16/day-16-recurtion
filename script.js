@@ -82,17 +82,42 @@
 
 
 
-let str='aba';
+// let str='aba';
 
-function palindrome(index,arr){
-    if (index>=arr.length-index-1){
-        return 'Yes the string is palindrome';
-    }
-    if (arr[index]!=arr[arr.length-index-1]){
-        return 'No the string is not palindrome';
-    }
+// function palindrome(index,arr){
+//     if (index>=arr.length-index-1){
+//         return 'Yes the string is palindrome';
+//     }
+//     if (arr[index]!=arr[arr.length-index-1]){
+//         return 'No the string is not palindrome';
+//     }
 
-    return palindrome(index+1,arr);
+//     return palindrome(index+1,arr);
+// }
+
+// console.log(palindrome(0,str.split("")));
+
+
+
+
+
+let arr = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,,16];
+let target=0;
+
+function binarySearch(arr,lowIn,upIn,target){
+
+    if(upIn<lowIn){
+        return 'not found';
+    }
+    let mid=Math.floor((lowIn+upIn)/2); 
+    if(arr[mid]===target){
+        return mid;
+    }
+    if(arr[mid]>target){
+        
+        return binarySearch(arr,lowIn,mid-1,target);
+    }
+    return binarySearch(arr,mid+1,upIn,target);
 }
 
-console.log(palindrome(0,str.split("")));
+console.log(binarySearch(arr,0,arr.length-1,target));
